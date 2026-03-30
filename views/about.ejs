@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>About — Eddy Chiao</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=Noto+Serif+SC:wght@300;400&display=swap"
+			rel="stylesheet" />
+		<link rel="stylesheet" href="/css/styles.css" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/photos/public/favicon_dark.svg" />
+	</head>
+	<body class="inner-body">
+		<%- include('partials/nav') %>
+
+		<main class="about-main">
+			<div class="about-container">
+				<div class="about-photo-wrap">
+					<% /* Portrait image: Place your image at:
+					public/photos/about/portrait.jpg */ %>
+					<img
+						src="/photos/about/portrait.jpg"
+						alt="Portrait"
+						class="about-photo"
+						onerror="this.src = '/photos/placeholder.svg'" />
+				</div>
+
+				<div class="about-text">
+					<span class="section-cn">关于我</span>
+					<h1>About Me</h1>
+					<div class="about-divider"></div>
+					<p>Nice to meet you, I'm Eddy!</p>
+					<p>
+						I'm a software engineer currently based in New York City, who also
+						happens to love taking photos. This hobby started a long time ago
+						when I was a kid, taking photos with my dad's old camera and using
+						up all the film. In 2023, my passion was reignited when I bought my
+						own camera — now I can finally snap film to my heart's content.
+					</p>
+					<p>
+						To me, photography is a powerful art form: being able to capture a
+						person, place, event at a precise moment in time. Photos can tell
+						simple or sophisticated stories, either answer questions, or leave
+						the viewer with hundreds more. As someone who struggles with
+						drawing, I let the camera do the work of creating the canvas for me.
+					</p>
+					<p>
+						I enjoy capturing a wide range of photos, from diverse scenes to
+						working with different people. I'd love the opportunity to
+						collaborate with you — feel free to contact me at
+						<a href="mailto:eddychiao@gmail.com" class="contact-link"
+							>eddychiao@gmail.com</a
+						>.
+					</p>
+				</div>
+			</div>
+		</main>
+
+		<script src="/js/transitions.js"></script>
+	</body>
+</html>
