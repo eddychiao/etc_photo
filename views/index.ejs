@@ -116,8 +116,8 @@
 			const bg = document.getElementById("landingBg");
 			const img = new Image();
 			img.onload = () => bg.classList.add("loaded");
-			img.src = "/photos/hero/bw_bike.jpg";
-			bg.style.backgroundImage = "url('/photos/hero/bw_bike.jpg')";
+			img.src = "<%= locals.basePath || '' %>/photos/hero/bw_bike.jpg";
+			bg.style.backgroundImage = "url('<%= locals.basePath || '' %>/photos/hero/bw_bike.jpg')";
 		</script>
 	</body>
 </html>

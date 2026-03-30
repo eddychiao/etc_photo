@@ -25,8 +25,7 @@ function rebase(html) {
   if (!BASE) return html;
   return html
     .replace(/href="\//g, `href="${BASE}/`)
-    .replace(/src="\//g, `src="${BASE}/`)
-    .replace(/url\('\//g, `url('${BASE}/`);
+    .replace(/src="\//g, `src="${BASE}/`);
 }
 
 async function render(template, data, outPath) {
@@ -52,12 +51,13 @@ async function main() {
   mkdirp(OUT);
 
   console.log('Rendering pages...');
-  await render('index.ejs',       {},                                   path.join(OUT, 'index.html'));
-  await render('about.ejs',       { page: 'about' },                   path.join(OUT, 'about', 'index.html'));
-  await render('photography.ejs', { page: 'photography', collections }, path.join(OUT, 'photography', 'index.html'));
+  const base = { basePath: BASE };
+  await render('index.ejs',       { ...base },                                          path.join(OUT, 'index.html'));
+  await render('about.ejs',       { ...base, page: 'about' },                          path.join(OUT, 'about', 'index.html'));
+  await render('photography.ejs', { ...base, page: 'photography', collections },       path.join(OUT, 'photography', 'index.html'));
 
   for (const col of collections) {
-    await render('collection.ejs', { page: 'photography', collection: col },
+    await render('collection.ejs', { ...base, page: 'photography', collection: col },
       path.join(OUT, 'photography', col.slug, 'index.html'));
   }
 
