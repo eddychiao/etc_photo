@@ -34,7 +34,7 @@ jobs:
       - name: Export static site
         run: npm run export
         env:
-          BASE_PATH: /photography_portfolio
+          BASE_PATH: /etc_photo
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
