@@ -34,7 +34,7 @@
                 src="/photos/collections/<%= collection.slug %>/<%= filename %>"
                 alt=""
                 loading="lazy"
-                onerror="this.src='/photos/placeholder.svg'"
+                onerror="this.src='<%= basePath %>/photos/placeholder.svg'"
               >
             </div>
           </div>

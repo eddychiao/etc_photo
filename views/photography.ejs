@@ -29,7 +29,7 @@
               src="/photos/collections/<%= col.slug %>/<%= col.cover %>"
               alt="<%= col.title %>"
               loading="lazy"
-              onerror="this.src='/photos/placeholder.svg'"
+              onerror="this.src='<%= basePath %>/photos/placeholder.svg'"
             >
           </div>
           <div class="collection-label">
