@@ -1,0 +1,70 @@
+/* ============================================================
+   Reset & Root
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:           #0c0a0a;
+  --surface:      #161313;
+  --text:         #e4ddd0;
+  --text-muted:   #7a7268;
+  --accent:       #c4956a;
+  --border:       rgba(228, 221, 208, 0.08);
+  --nav-height:   72px;
+
+  --font-serif:  'Cormorant Garamond', Georgia, serif;
+  --font-cn:     'Inter', 'Noto Serif SC', sans-serif;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;    /* IE / Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari, Opera */
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Only content fades — navs appear instantly so they feel persistent across pages */
+main {
+  animation: fadeIn 0.35s ease;
+}
+
+/* Opacity-only fade to avoid fighting the translateX(-50%) centering */
+.landing-socials {
+  animation: fadeInOpacity 0.35s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+@keyframes fadeInOpacity {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

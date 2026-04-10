@@ -1,0 +1,171 @@
+/* ============================================================
+   Shared Navigation
+   ============================================================ */
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.nav-logo-link {
+  display: block;
+  line-height: 0;
+}
+
+.nav-logo-img {
+  height: 20px;
+  width: auto;
+  display: block;
+  opacity: 0.88;
+  transition: opacity 0.2s;
+}
+
+.nav-logo-img:hover {
+  opacity: 1;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-links a {
+  font-family: var(--font-cn);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: opacity 0.2s;
+}
+
+
+/* ============================================================
+   Landing Page — Navigation
+   ============================================================ */
+.nav-landing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 52px;
+  height: var(--nav-height);
+  background: linear-gradient(to bottom, rgba(5, 4, 4, 0.52) 0%, transparent 100%);
+}
+
+.nav-landing .nav-logo {
+  color: #fff;
+  opacity: 0.92;
+}
+
+.nav-landing .nav-links a {
+  color: #fff;
+  opacity: 0.75;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+.nav-landing .nav-links a:hover {
+  opacity: 1;
+}
+
+
+/* ============================================================
+   Inner Pages — Navigation
+   ============================================================ */
+.inner-body {
+  min-height: 100vh;
+}
+
+.nav-inner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 52px;
+  height: var(--nav-height);
+  border-bottom: 1px solid var(--border);
+  background: rgba(12, 10, 10, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.nav-inner .nav-logo {
+  color: var(--text);
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.nav-inner .nav-logo:hover {
+  opacity: 1;
+}
+
+.nav-inner .nav-links a {
+  color: var(--text);
+  opacity: 0.45;
+}
+
+.nav-inner .nav-links a:hover {
+  opacity: 0.9;
+}
+
+.nav-inner .nav-links a.active {
+  opacity: 1;
+  position: relative;
+}
+
+.nav-inner .nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 48%;
+  transform: translateX(-50%);
+  width: 96%;
+  height: 1px;
+  background: var(--accent);
+}
+
+
+/* ============================================================
+   Section Labels (shared)
+   ============================================================ */
+.section-cn {
+  font-family: var(--font-cn);
+  font-weight: 400;
+  font-size: 0.90rem;
+  letter-spacing: 0.4em;
+  color: var(--accent);
+  opacity: 0.85;
+  display: block;
+  margin-bottom: 14px;
+}
+
+
+/* ============================================================
+   Responsive — Navigation
+   ============================================================ */
+@media (max-width: 600px) {
+  .nav-landing,
+  .nav-inner {
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav-links {
+    gap: 16px;
+  }
+}

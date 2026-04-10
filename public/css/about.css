@@ -1,0 +1,100 @@
+/* ============================================================
+   About Page
+   ============================================================ */
+.about-main {
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+  padding: 32px 52px 88px;
+  text-align: center;
+}
+
+.about-photo-wrap {
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 28px;
+}
+
+.about-photo {
+  width: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-text h1 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: 2.4rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.about-divider {
+  width: 30px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.45;
+  margin: 24px auto;
+}
+
+.about-text p {
+  font-family: var(--font-cn);
+  font-size: 0.96rem;
+  line-height: 1.85;
+  color: rgba(228, 221, 208, 0.72);
+  font-weight: 300;
+  margin-bottom: 1.1em;
+}
+
+.about-contact {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.contact-link {
+  font-family: var(--font-cn);
+  font-size: 0.92rem;
+  color: var(--accent);
+  border-bottom: 1px solid rgba(196, 149, 106, 0.28);
+  padding-bottom: 3px;
+  transition: border-color 0.25s;
+}
+
+.contact-link:hover {
+  border-color: var(--accent);
+}
+
+
+/* ============================================================
+   Responsive — About
+   ============================================================ */
+@media (max-width: 900px) {
+  .about-container {
+    padding: 64px 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-container {
+    padding: 48px 24px 72px;
+  }
+}
