@@ -9,7 +9,7 @@ import { PhotographyPage } from "./pages/PhotographyPage";
 import { CollectionPage } from "./pages/CollectionPage";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 app.use(express.static(path.join(__dirname, "../public")));
 
@@ -40,27 +40,27 @@ const collections: Collection[] = [
 		title: "Film",
 		cover: "kodak400_5.jpg",
 		photos: [
-			"arista_1.jpg",
-			"arista_2.jpg",
-			"arista_3.jpg",
-			"arista_4.jpg",
-			"arista_5.jpg",
-			"arista_6.jpg",
-			"kodak200_1.jpg",
+			"kodak400_1.jpg",
 			"kodak200_2.jpg",
-			"kodak200_3.jpg",
-			"kodak200_4.jpg",
-			"kodak200_5.jpg",
-			"kodak200_6.jpg",
-			"kodak200_7.jpg",
+			"kodak400_2.jpg",
+			"arista_3.jpg",
+			"kodak400_5.jpg",
 			"kodak200_8.jpg",
 			"kodak200_9.jpg",
-			"kodak400_1.jpg",
-			"kodak400_2.jpg",
+			"kodak200_4.jpg",
+			"kodak200_1.jpg",
 			"kodak400_3.jpg",
-			"kodak400_4.jpg",
-			"kodak400_5.jpg",
+			"arista_6.jpg",
+			"kodak200_7.jpg",
 			"kodak400_6.jpg",
+			"arista_2.jpg",
+			"kodak200_3.jpg",
+			"kodak200_5.jpg",
+			"arista_4.jpg",
+			"arista_1.jpg",
+			"kodak200_6.jpg",
+			"arista_5.jpg",
+			"kodak400_4.jpg",
 		],
 	},
 	{
@@ -93,7 +93,10 @@ app.get("/about", (_req, res) => {
 });
 
 app.get("/photography", (_req, res) => {
-	safeSend(res, React.createElement(PhotographyPage, { page: "photography", collections }));
+	safeSend(
+		res,
+		React.createElement(PhotographyPage, { page: "photography", collections }),
+	);
 });
 
 app.get("/photography/:slug", (req, res) => {
@@ -102,7 +105,10 @@ app.get("/photography/:slug", (req, res) => {
 		res.status(404).send("<h1>404 — Collection not found</h1>");
 		return;
 	}
-	safeSend(res, React.createElement(CollectionPage, { page: "photography", collection }));
+	safeSend(
+		res,
+		React.createElement(CollectionPage, { page: "photography", collection }),
+	);
 });
 
 // Catch-all 404
@@ -111,10 +117,17 @@ app.use((_req, res) => {
 });
 
 // Express error handler (catches errors passed via next(err))
-app.use((err: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
-	console.error("[express error]", err);
-	res.status(500).send("<h1>500 — Server Error</h1>");
-});
+app.use(
+	(
+		err: Error,
+		_req: express.Request,
+		res: express.Response,
+		_next: express.NextFunction,
+	) => {
+		console.error("[express error]", err);
+		res.status(500).send("<h1>500 — Server Error</h1>");
+	},
+);
 
 app.listen(PORT, () => {
 	console.log(`Photography site running at http://localhost:${PORT}`);

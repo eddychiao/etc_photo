@@ -21,29 +21,29 @@ const collections: Collection[] = [
 	{
 		slug: "film",
 		title: "Film",
-		cover: "arista_1.jpg",
+		cover: "kodak400_5.jpg",
 		photos: [
-			"arista_1.jpg",
-			"arista_2.jpg",
-			"arista_3.jpg",
-			"arista_4.jpg",
-			"arista_5.jpg",
-			"arista_6.jpg",
-			"kodak200_1.jpg",
+			"kodak400_1.jpg",
 			"kodak200_2.jpg",
-			"kodak200_3.jpg",
-			"kodak200_4.jpg",
-			"kodak200_5.jpg",
-			"kodak200_6.jpg",
-			"kodak200_7.jpg",
+			"kodak400_2.jpg",
+			"arista_3.jpg",
+			"kodak400_5.jpg",
 			"kodak200_8.jpg",
 			"kodak200_9.jpg",
-			"kodak400_1.jpg",
-			"kodak400_2.jpg",
+			"kodak200_4.jpg",
+			"kodak200_1.jpg",
 			"kodak400_3.jpg",
-			"kodak400_4.jpg",
-			"kodak400_5.jpg",
+			"arista_6.jpg",
+			"kodak200_7.jpg",
 			"kodak400_6.jpg",
+			"arista_2.jpg",
+			"kodak200_3.jpg",
+			"kodak200_5.jpg",
+			"arista_4.jpg",
+			"arista_1.jpg",
+			"kodak200_6.jpg",
+			"arista_5.jpg",
+			"kodak400_4.jpg",
 		],
 	},
 	{ slug: "tbd", title: "Coming Soon", cover: "cover.jpg", photos: [] },
@@ -132,7 +132,7 @@ function main(): void {
 <head>
   <meta charset="UTF-8" />
   <title>Page Not Found</title>
-  <script>window.location.replace("${BASE || '/'}");</script>
+  <script>window.location.replace("${BASE || "/"}");</script>
 </head>
 <body></body>
 </html>`;

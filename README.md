@@ -13,7 +13,7 @@ Personal photography portfolio site built with Node.js, Express, and EJS.
 
 ```bash
 npm install
-npm run dev        # starts dev server at http://localhost:3000
+npm run dev        # starts dev server at http://localhost:4000
 ```
 
 ## Adding Photos
